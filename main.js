@@ -6,6 +6,34 @@ onScroll()
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
+  activateMenuAtCurrentSection(home)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
+}
+
+function activateMenuAtCurrentSection(section) {
+  //cálculo para verificar onde o scroll está na viewport
+  const targetLine = scrollY + innerHeight / 2
+
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
+
+  const sectionEndsAt = sectionTop + sectionHeight
+  const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+
+  //está dentro da sessão
+  const sectionBoundaries =
+    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+
+  const sectionId = section.getAttribute('id')
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+  menuElement.classList.remove('active')
+  if (sectionBoundaries) {
+    menuElement.classList.add('active')
+  }
 }
 
 function showNavOnScroll() {

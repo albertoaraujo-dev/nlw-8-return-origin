@@ -615,15 +615,17 @@ footer .social-links {
     background-color: white;
   }
 
-  nav#navigationHeader .menu ul li a:hover::after {
+  nav#navigationHeader .menu li a.active::after,
+  nav#navigationHeader .menu li a:hover::after {
     padding-inline: 0.8rem;
     width: 100%;
   }
 
+  nav#navigationHeader.scroll .menu li a.active,
   nav#navigationHeader.scroll .menu li a:hover {
     opacity: 1;
   }
-
+  nav#navigationHeader.scroll .menu a.button.active,
   nav#navigationHeader.scroll .menu a.button:hover {
     background-color: var(--primary-color);
     filter: brightness(1.3);
