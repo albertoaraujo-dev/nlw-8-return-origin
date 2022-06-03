@@ -10,9 +10,9 @@ function onScroll() {
 
 function showNavOnScroll() {
   if (scrollY > 0) {
-    navigation.classList.add('scroll')
+    navigationHeader.classList.add('scroll')
   } else {
-    navigation.classList.remove('scroll')
+    navigationHeader.classList.remove('scroll')
   }
 }
 
