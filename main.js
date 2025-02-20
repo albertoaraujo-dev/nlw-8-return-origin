@@ -50,6 +50,24 @@ function showBackToTopButtonOnScroll() {
   } else {
     backToTopButton.classList.remove('show')
   }
+  function isMobile() {
+    const minWidth = 768; // Minimum width for desktop devices
+    return window.innerWidth < minWidth || screen.width < minWidth;
+  }
+  
+  if (isMobile()) {
+    if (scrollY > 4000) {
+      backToTopButton.classList.add('footerColor')
+    } else {
+      backToTopButton.classList.remove('footerColor')
+    }
+  } else {
+    if (scrollY > 2000) {
+      backToTopButton.classList.add('footerColor')
+    } else {
+      backToTopButton.classList.remove('footerColor')
+    }
+  } 
 }
 
 function openMenu() {
