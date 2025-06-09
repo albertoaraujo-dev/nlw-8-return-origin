@@ -58,6 +58,11 @@ img {
   max-width: 100%;
 }
 
+.logo,
+#logoImage{
+    height: 60px;
+}
+
 section {
   padding-block: 10rem;
 }
@@ -140,19 +145,14 @@ section .constant p {
 }
 
 #backToTopButton circle,
-/*tudo em path que contenha *(tudo) igual a ....*/
+/*all in path that contains*/
 #navigationHeader .logo path[fill*='#D66D5C'] {
-  fill: var(--primary-color);
+    fill: var(--primary-color);
 }
 
 button.open-menu path[stroke*='#D66D5C'],
 #contact li path {
   stroke: var(--primary-color);
-}
-
-body.menu-expanded #navigationHeader .logo path[fill*='#D66D5C'],
-#navigationHeader.scroll .logo path[fill*='#D66D5C'] {
-  fill: #F5DAD6
 }
 
 #navigationHeader.scroll button.open-menu path {
@@ -167,9 +167,6 @@ nav {
 
   position: fixed;
   top: 0;
-  /*alinhamento antigo quando .scroll off
-  left: 50%;
-  transform: translateX(-50%);*/
   width: 100vw;
 
   z-index: 100;
@@ -202,8 +199,6 @@ body.menu-expanded {
 }
 
 body.menu-expanded > :not(nav) {
-  /* elimina o elemento da tela
-  display: none; */
   visibility: hidden;
 }
 
@@ -221,7 +216,7 @@ body.menu-expanded .close-menu {
 }
 
 .menu {
-  /*joga pra fora da tela*/
+  /*out of the window*/
   transform: translateY(100%);
 }
 
@@ -236,7 +231,7 @@ body.menu-expanded .menu {
   padding-top: var(--nav-height);
 
   transition: transform 300ms;
-  /*volta pra tela*/
+  /*back to the window*/
   transform: translateY(0);
 }
 
@@ -285,10 +280,6 @@ body.menu-expanded button {
   z-index: 100;
 }
 
-/* body.menu-expanded .logo path {
-  fill: #EAB6AD
-} */
-
 body.menu-expanded button path {
   stroke: white;
 }
@@ -310,7 +301,6 @@ body.menu-expanded button path {
   position: absolute;
   top: 0;
   left: 0;
-  /*profundidade*/
   z-index: -1;
 }
 
@@ -336,9 +326,7 @@ body.menu-expanded button path {
 
 #home .stats {
   width: 100%;
-  /*block = vertical*/
   padding-block: 4rem;
-  /*inline = horizontal*/
   margin-inline: auto;
 
   background-color: var(--brand-beige);
@@ -349,7 +337,6 @@ body.menu-expanded button path {
   flex-direction: column;
   justify-content: center;
 
-  /*espaço entre os elementos*/
   gap: 6rem;
 }
 
@@ -440,13 +427,8 @@ footer {
 }
 
 footer .logo {
-  /*display inline não aceita largura, altura, etc..*/
   display: inline-block;
   margin-bottom: 1rem;
-}
-
-footer .logo path {
-  fill: white;
 }
 
 footer p {
@@ -513,9 +495,6 @@ footer p .tag {
     font-size: 4rem;
     line-height: 5.2rem;
   }
-  /* ===== navigationHeader =====*/
-  /* reset das propriedades
-  initial volta o valor da propriedade para antes de ser alterado via CSS*/
   nav#navigationHeader .wrapper * {
     margin: 0;
     padding: 0;

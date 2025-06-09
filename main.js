@@ -1,6 +1,5 @@
-//evitar erro de tentar executar JS antes de carregar toda página
 window.addEventListener('scroll', onScroll)
-//rodar a função ao iniciar
+
 onScroll()
 
 function onScroll() {
@@ -13,7 +12,7 @@ function onScroll() {
 }
 
 function activateMenuAtCurrentSection(section) {
-    //cálculo para verificar onde o scroll está na viewport
+    //calc to verify where the scroll is on viewport
     const targetLine = scrollY + innerHeight / 2
 
     const sectionTop = section.offsetTop
@@ -23,7 +22,7 @@ function activateMenuAtCurrentSection(section) {
     const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
     const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
 
-    //está dentro da sessão
+    //is inside the section
     const sectionBoundaries =
         sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
 
